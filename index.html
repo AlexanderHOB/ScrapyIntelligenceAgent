@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Agency</title>
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <!-- start nav -->
+    <header>
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="#" class="brand-logo"> &nbsp; Nediam</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cia.html">CIA</a></li>
+                <li><a href="#" >Proximamente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- end nav -->
+    <!-- start image portada -->
+    <main>
+        <div class="parallax-container">
+            <div class="parallax"><img src="source/images/portada.jpg"></div>
+        </div>
+        <div class="section white">
+            <div class="center-align">
+                <article class="container">
+                    <h3 class="header">Los documentos del mundo, ante tus ojos 👁👁</h3>
+                    <br/>
+                    <p class="flow-text ">
+                        Este proyecto tiene como objetivo recopilar los documentos de las agencias de inteligencia
+                        más poderosas del mundo, como la CIA, el Mossad y la NASA. Estos documentos possen secretos sobre 
+                        la historia de nuestro planeta, sobre las guerras del pasado y los misterios del presente.
+                        Para lograr la recopilación se utilizarón métodos de scraping a sus respectivas páginas web.
+                    </p>
+                    <div class="container">
+                        <a class="waves-effect waves-light btn-large  grey darken-3" href="cia.html">CIA Declassified</a>
+                    </div>
+                    <p class="flow-text ">
+                        Próximamente nuevos documentos de nuevas agencias! 😁
+                    </p>
+                </article>
+            </div>
+
+        </div>
+    </main>
+    <footer class="page-footer grey darken-4">
+        <div class="footer-copyright">
+            <div class="container center-align">
+            © <strong id="date"></strong> Copyright  
+            </div>
+        </div>
+    </footer>
+    
+    <!-- fin image portada  -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="source/js/init.js"></script>
+    <script>
+        var fecha = new Date();
+        var ano = fecha.getFullYear();
+        date = document.querySelector('#date');
+        date.innerHTML=ano;
+    </script>
+</body>
+</html>

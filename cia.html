@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Agency</title>
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <!-- start nav -->
+    <header>
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="#" class="brand-logo"> &nbsp; Nediam</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cia.html">CIA</a></li>
+                <li><a href="#" >Proximamente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- end nav -->
+    <!-- start image portada -->
+    <!-- start main -->
+    <main>
+        <div class="container">
+            <h4 class="center-align">Documentos 😶</h4>
+            <div class="row articles">
+                
+            </div>
+        </div>
+    </main>
+    <!-- end main -->
+    <!-- start foot  -->
+    <footer class="page-footer grey darken-4">
+        <div class="footer-copyright">
+            <div class="container center-align">
+            © <strong id="date"></strong> Copyright  
+            </div>
+        </div>
+    </footer>
+    <!-- end foot  -->
+    <!-- fin image portada  -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="source/js/getData.js"></script>
+    <script>
+        var fecha = new Date();
+        var ano = fecha.getFullYear();
+        date = document.querySelector('#date');
+        date.innerHTML=ano;
+    </script>
+</body>
+</html>
