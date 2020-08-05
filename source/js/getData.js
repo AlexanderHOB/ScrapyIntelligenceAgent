@@ -1,21 +1,22 @@
 (function(){
     let ciaData = null;
     let articles = document.querySelector('.articles');
-    fetch("https://app.scrapinghub.com/api/v2/datasets/kdybI1E79Ww/download?format=json")
+    fetch("https://raw.githubusercontent.com/AlexanderHOB/ScrapyIntelligenceAgent/master/intelligence_agency_proyect/cia.json")
         .then((r)=>{
             return r.json();
         })
         .then((data)=>{
+            console.log(data)
             ciaData = data;
-            cards = ciaData.map((content,id)=> buildArticle(content['title'],content['body'],content['url']));
+            cards = ciaData.map((content,id)=> buildArticle(content['title'],content['body'],content['url'],content['img']));
         })
-    const buildArticle = (title,body,link)=>{
+    const buildArticle = (title,body,link,image)=>{
         let article = document.createElement('div');
-        article.classList.add('col','s4','article');
-        article.appendChild(buildCard(title,body,link))
+        article.classList.add('col','s6','article');
+        article.appendChild(buildCard(title,body,link,image))
         articles.appendChild(article)
     }
-    const buildCard = (title,body,link)=>{
+    const buildCard = (title,body,link,image)=>{
         let card = document.createElement('div')
         let cardImage = document.createElement('div')
         let cardContent = document.createElement('div')
@@ -24,7 +25,11 @@
         cardImage.classList.add('card-image');
         cardContent.classList.add('card-content');
         img.classList.add('responsive-img')
+        img.style.height="280px";
         img.src="../source/images/img.jpg";
+        if(image !=null){
+            img.src="https://www.cia.gov"+image;
+        }
         cardImage.appendChild(img);
         cardImage.appendChild(buildTitle(title,link));
         cardContent.appendChild(buildBody(body));
@@ -44,6 +49,7 @@
     }
     const buildBody = (body)=>{
         let p = document.createElement('p');
+        body = body.join(' ')
         body = body.substr(0,200)
         body += '...'
         p.textContent=body;
