@@ -6,7 +6,6 @@
             return r.json();
         })
         .then((data)=>{
-            console.log(data)
             ciaData = data;
             cards = ciaData.map((content,id)=> buildArticle(content['title'],content['body'],content['url'],content['img']));
         })
@@ -26,7 +25,7 @@
         cardContent.classList.add('card-content');
         img.classList.add('responsive-img')
         img.style.height="280px";
-        img.src="../source/images/img.jpg";
+        img.src="../images/img.jpg";
         if(image !=null){
             img.src="https://www.cia.gov"+image;
         }
